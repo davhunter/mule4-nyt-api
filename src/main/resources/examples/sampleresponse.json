@@ -1,0 +1,346 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2018 The New York Times Company. All Rights Reserved.",
+  "response": {
+    "docs": [
+      {
+        "web_url": "https://www.nytimes.com/reuters/2018/05/10/business/10reuters-steinhoff-intln-accounts.html",
+        "snippet": "South African retailer Steinhoff said on Thursday that an investigation by auditors PwC had found that overstatement of its profits may result in additional material impairments, sending its shares down more than 16 percent.",
+        "source": "Reuters",
+        "headline": {
+          "main": "Steinhoff Could Face More Impairments, Shares Dive",
+          "kicker": null,
+          "content_kicker": null,
+          "print_headline": "Steinhoff Could Face More Impairments, Shares Dive",
+          "name": null,
+          "seo": null,
+          "sub": null
+        },
+        "keywords": [],
+        "pub_date": "2018-05-10T13:52:34+0000",
+        "_id": "5af44ea4068401528a2ad5ad",
+        "score": 0.0029408566
+      },
+      {
+        "web_url": "https://www.nytimes.com/aponline/2018/05/09/business/ap-us-on-the-money-co-living.html",
+        "snippet": "Big city apartment-dwelling can be a financial and emotional drain, but the growing trend of co-living can soften the blow.",
+        "source": "AP",
+        "headline": {
+          "main": "As Rents Soar, Co-Living Becomes a More Appealing Option",
+          "kicker": null,
+          "content_kicker": null,
+          "print_headline": "As Rents Soar, Co-Living Becomes a More Appealing Option",
+          "name": null,
+          "seo": null,
+          "sub": null
+        },
+        "keywords": [],
+        "pub_date": "2018-05-09T14:01:42+0000",
+        "_id": "5af2ff49068401528a2ad1fd",
+        "score": 0.0024454556
+      },
+      {
+        "web_url": "https://www.nytimes.com/reuters/2018/05/03/business/03reuters-manucor-m-a-pillarstone.html",
+        "snippet": "Pillarstone has taken over Manucor after restructuring the Italian packaging firm's debt, the debt managing platform set up by U.S. investment firm KKR said on Thursday.",
+        "source": "Reuters",
+        "headline": {
+          "main": "Pillarstone Buys Italy's Manucor in Debt Restructuring Deal",
+          "kicker": null,
+          "content_kicker": null,
+          "print_headline": "Pillarstone Buys Italy's Manucor in Debt Restructuring Deal",
+          "name": null,
+          "seo": null,
+          "sub": null
+        },
+        "keywords": [],
+        "pub_date": "2018-05-03T09:58:32+0000",
+        "_id": "5aeadd61068401528a2ac034",
+        "score": 0.0038582892
+      },
+      {
+        "web_url": "https://www.nytimes.com/reuters/2018/05/03/business/03reuters-barclays-group-kpmg.html",
+        "snippet": "KPMG's scandal-hit South African arm lost another major client on Thursday when Barclays Africa Group dropped it as joint auditor, raising questions about the firm's future. ",
+        "source": "Reuters",
+        "headline": {
+          "main": "Barclays Africa Dumps KPMG in Latest Blow to Auditor in South Africa",
+          "kicker": null,
+          "content_kicker": null,
+          "print_headline": "Barclays Africa Dumps KPMG in Latest Blow to Auditor in South Africa",
+          "name": null,
+          "seo": null,
+          "sub": null
+        },
+        "keywords": [],
+        "pub_date": "2018-05-03T08:55:37+0000",
+        "_id": "5aeace8d068401528a2abff9",
+        "score": 0.0033987793
+      },
+      {
+        "web_url": "https://www.nytimes.com/reuters/2018/05/02/business/02reuters-britain-tsb-ceo.html",
+        "snippet": "The chief executive of British bank TSB, Paul Pester, will not get a bonus linked to the bank's botched computer system migration, TSB's Chairman Richard Meddings told lawmakers on Wednesday.",
+        "source": "Reuters",
+        "headline": {
+          "main": "TSB Chief to Lose Bonus Linked to Botched IT Upgrade",
+          "kicker": null,
+          "content_kicker": null,
+          "print_headline": "TSB Chief to Lose Bonus Linked to Botched IT Upgrade",
+          "name": null,
+          "seo": null,
+          "sub": null
+        },
+        "keywords": [],
+        "pub_date": "2018-05-02T15:01:33+0000",
+        "_id": "5ae9d2d1068401528a2abd84",
+        "score": 0.0034267947
+      },
+      {
+        "web_url": "https://www.nytimes.com/reuters/2018/05/02/business/02reuters-samsung-biologic-accounting-samsung-c-t-corp.html",
+        "snippet": "South Korean biotech drug manufacturer Samsung BioLogics Co Ltd lost almost $6 billion (4.4 billion pounds) in market value on Wednesday in its biggest intra-day share drop, after the country's financial watchdog said it breached accounting rules....",
+        "source": "Reuters",
+        "headline": {
+          "main": "Accounting Concerns Wipe $6 Billion Off Samsung BioLogics Market Value",
+          "kicker": null,
+          "content_kicker": null,
+          "print_headline": "Accounting Concerns Wipe $6 Billion Off Samsung BioLogics Market Value",
+          "name": null,
+          "seo": null,
+          "sub": null
+        },
+        "keywords": [],
+        "pub_date": "2018-05-02T04:10:32+0000",
+        "_id": "5ae93a3b068401528a2abbe8",
+        "score": 0.002450714
+      },
+      {
+        "web_url": "https://www.nytimes.com/reuters/2018/05/01/technology/01reuters-world-work-recruiting.html",
+        "snippet": "When Andrew Chamberlain started in his job four years ago in the research group at jobs website Glassdoor.com, he worked in a programing language called Stata. Then it was R. Then Python. Then PySpark. ",
+        "source": "Reuters",
+        "headline": {
+          "main": "Tomorrow's Jobs Require Impressing a Bot With Quick Thinking",
+          "kicker": null,
+          "content_kicker": null,
+          "print_headline": "Tomorrow's Jobs Require Impressing a Bot With Quick Thinking",
+          "name": null,
+          "seo": null,
+          "sub": null
+        },
+        "keywords": [],
+        "pub_date": "2018-05-01T10:07:34+0000",
+        "_id": "5ae83c68068401528a2ab9a3",
+        "score": 0.0024454556
+      },
+      {
+        "web_url": "https://www.nytimes.com/2018/04/26/business/walmart-flipkart-india.html",
+        "snippet": "The company is said to be in talks to acquire Flipkart, India’s leading online retailer, to counter Amazon’s push into the country.",
+        "source": "The New York Times",
+        "headline": {
+          "main": "Walmart, With Billions to Spend, Seeks Flipkart E-Commerce Site in India",
+          "kicker": null,
+          "content_kicker": null,
+          "print_headline": "Walmart Nears Deal to Control Indian Online Store Flipkart",
+          "name": null,
+          "seo": null,
+          "sub": null
+        },
+        "keywords": [
+          {
+            "name": "organizations",
+            "value": "Walmart Stores Inc",
+            "rank": 1,
+            "major": "N"
+          },
+          {
+            "name": "organizations",
+            "value": "Flipkart.com",
+            "rank": 2,
+            "major": "N"
+          },
+          {
+            "name": "glocations",
+            "value": "India",
+            "rank": 3,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "E-Commerce",
+            "rank": 4,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "Mergers, Acquisitions and Divestitures",
+            "rank": 5,
+            "major": "N"
+          },
+          {
+            "name": "organizations",
+            "value": "Amazon.com Inc",
+            "rank": 6,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "Shopping and Retail",
+            "rank": 7,
+            "major": "N"
+          }
+        ],
+        "pub_date": "2018-04-26T13:18:11+0000",
+        "_id": "5ae1d196068401528a2aad50",
+        "score": 0.001955777
+      },
+      {
+        "web_url": "https://www.nytimes.com/2018/04/11/business/xi-jinping-china-trade-boao.html",
+        "snippet": "The Chinese leader portrayed himself as a champion of free trade and the world order, and the global elite celebrated him.",
+        "source": "The New York Times",
+        "headline": {
+          "main": "Xi Jinping Promotes Openness at a China Forum Rife With Restrictions",
+          "kicker": null,
+          "content_kicker": null,
+          "print_headline": "Xi Pushes Openness at a Forum Barring It",
+          "name": null,
+          "seo": null,
+          "sub": null
+        },
+        "keywords": [
+          {
+            "name": "glocations",
+            "value": "China",
+            "rank": 1,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "International Trade and World Market",
+            "rank": 2,
+            "major": "N"
+          },
+          {
+            "name": "persons",
+            "value": "Xi Jinping",
+            "rank": 3,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "Economic Conditions and Trends",
+            "rank": 4,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "Protectionism (Trade)",
+            "rank": 5,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "Customs (Tariff)",
+            "rank": 6,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "Foreign Investments",
+            "rank": 7,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "Banking and Financial Institutions",
+            "rank": 8,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "International Relations",
+            "rank": 9,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "United States International Relations",
+            "rank": 10,
+            "major": "N"
+          },
+          {
+            "name": "organizations",
+            "value": "Boao Forum for Asia",
+            "rank": 11,
+            "major": "N"
+          }
+        ],
+        "pub_date": "2018-04-11T16:50:26+0000",
+        "_id": "5ace3cd5068401528a2a74d8",
+        "score": 0.0019563646
+      },
+      {
+        "web_url": "https://www.nytimes.com/2018/03/20/technology/founders-for-change-tech-diversity.html",
+        "snippet": "Leading Silicon Valley entrepreneurs are forming a Founders for Change coalition to deliver a message to the white- and male-dominated world of venture capital.",
+        "source": "The New York Times",
+        "headline": {
+          "main": "Hundreds of Start-Ups Tell Investors: Diversify, or Keep Your Money",
+          "kicker": null,
+          "content_kicker": null,
+          "print_headline": "Hundreds of Start-Ups Tell Investors: Diversify, or Keep Your Money",
+          "name": null,
+          "seo": null,
+          "sub": null
+        },
+        "keywords": [
+          {
+            "name": "subject",
+            "value": "Venture Capital",
+            "rank": 1,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "Entrepreneurship",
+            "rank": 2,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "Women and Girls",
+            "rank": 3,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "Start-ups",
+            "rank": 4,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "Sexual Harassment",
+            "rank": 5,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "Computers and the Internet",
+            "rank": 6,
+            "major": "N"
+          },
+          {
+            "name": "persons",
+            "value": "Lee, Aileen (1970- )",
+            "rank": 7,
+            "major": "N"
+          }
+        ],
+        "pub_date": "2018-03-20T09:00:07+0000",
+        "_id": "5ab0cda0068401528a298b7b",
+        "score": 0.0019421596
+      }
+    ],
+    "meta": {
+      "hits": 2711,
+      "offset": 0,
+      "time": 10
+    }
+  }
+}

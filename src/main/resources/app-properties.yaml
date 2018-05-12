@@ -1,0 +1,13 @@
+http:
+  port: "8083"
+  host: "0.0.0.0"
+
+nyt:
+  apiKey: "defaultapikey"
+  host: "api.nytimes.com"
+  port: "443"
+  basePath: "/svc/search/v2/"
+  path: "articlesearch.json"
+  sort: "newest"
+  fl: "web_url,snippet,abstract,lead_paragraph,headline,pub_date,keywords,source,_id"
+  page: "0"

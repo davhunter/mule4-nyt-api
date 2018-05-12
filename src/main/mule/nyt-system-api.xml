@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd ">
-    <http:listener-config name="nyt-system-api-httpListenerConfig">
-        <http:listener-connection host="0.0.0.0" port="8081" />
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+    <http:listener-config name="nyt-system-api-httpListenerConfig" doc:name="HTTP Listener config">
+        <http:listener-connection host="${http.host}" port="${http.port}"/>
     </http:listener-config>
-    <apikit:config name="nyt-system-api-config" raml="nyt-system-api.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
-    <flow name="nyt-system-api-main">
-        <http:listener config-ref="nyt-system-api-httpListenerConfig" path="/api/*">
+    <apikit:config name="nyt-system-api-config" raml="nyt-system-api.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" doc:name="Router"/>
+    <configuration-properties doc:name="Configuration properties" doc:id="0f5c9406-cc41-405c-a2d3-bc2b5b475280" file="app-properties.yaml" />
+	<http:request-config name="NYT_Request_configuration" doc:name="HTTP Request configuration" doc:id="d59320ad-7fb1-4b1c-8d32-3ba69e90001a" basePath="${nyt.basePath}" >
+		<http:request-connection host="${nyt.host}" port="${nyt.port}" protocol="HTTPS"/>
+	</http:request-config>
+	<flow name="nyt-system-api-main">
+        <http:listener config-ref="nyt-system-api-httpListenerConfig" path="/nyt/*" doc:name="Listener">
             <http:response statusCode="#[vars.httpStatus default 200]">
-                <http:headers>#[vars.outboundHeaders default {}]</http:headers>
             </http:response>
             <http:error-response statusCode="#[vars.httpStatus default 500]">
-                <http:body>#[payload]</http:body>
-                <http:headers>#[vars.outboundHeaders default {}]</http:headers>
+                <http:body><![CDATA[#[payload]]]></http:body>
             </http:error-response>
         </http:listener>
-        <apikit:router config-ref="nyt-system-api-config" />
+        <apikit:router config-ref="nyt-system-api-config" doc:name="APIkit Router"/>
         <error-handler>
             <on-error-propagate type="APIKIT:BAD_REQUEST">
                 <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
@@ -123,7 +126,43 @@ output application/json
             </on-error-propagate>
         </error-handler>
     </flow>
-    <flow name="get:\articles\(search-term):nyt-system-api-config">
-        <logger level="INFO" message="get:\articles\(search-term):nyt-system-api-config" />
+    <flow name="get:\articles\(searchTerm):nyt-system-api-config">
+        <http:request method="GET" doc:name="Call NYT API" doc:id="e3e9dec7-eabd-4be9-aed7-d8db087e0109" config-ref="NYT_Request_configuration" path="${nyt.path}" outputMimeType="application/json">
+			<http:query-params ><![CDATA[#[output applicaton/java
+---
+{
+	"api-key" : p('nyt.apiKey'),
+	q : attributes.uriParams.searchTerm,
+	sort : p('nyt.sort'),
+	fl : p('nyt.fl'),
+	page : p('nyt.page')
+}]]]></http:query-params>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="5e42b0f4-6e5c-49ec-9b79-3f691b7af9ab" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	detailedResults: payload.response.docs map ( result , indexOfResult ) -> {
+		datePublished: result.pub_date,
+		id: result."_id",
+		source: "NYT",
+		text: result.snippet,
+		categories: result.keywords map ( category , indexOfCategory ) -> category.value,
+		title: result.headline.main,
+		department: result.source,
+		user: "",
+		url: result.web_url
+	},
+	simpleResults: payload.response.docs map ( result , indexOfResult ) -> {
+		id: result."_id",
+		source: "NYT",
+		text: result.snippet,
+		categories: result.keywords map ( category , indexOfCategory) -> category.value
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
     </flow>
 </mule>

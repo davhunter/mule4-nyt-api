@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="sampleResponse" format="json">
+      <types:example format="json" location="examples/sampleresponse.json"/>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#5e42b0f4-6e5c-49ec-9b79-3f691b7af9ab">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="sampleResponse"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
