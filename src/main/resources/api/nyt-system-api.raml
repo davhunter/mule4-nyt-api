@@ -1,0 +1,25 @@
+#%RAML 1.0
+title: NYT System API
+description: System API to return articles from the New York Times' open API
+version: '1.0'
+baseUri: 'http://localhost:8081/nyt'
+
+documentation: 
+  - title: NYT System API
+    content: This API exposes data returned from the New York Times' publicly available API
+
+/articles:
+  /{search-term}:
+    get:
+      responses: 
+        200:
+          body: 
+            application/json:
+              type: !include exchange_modules/69d7f319-0d94-4bcb-b6e9-d6d5e28b1545/data-aggregation-demo-data-types/1.0.1/Result.raml
+        404:
+          body: 
+            application/json:
+        500:
+          body: 
+            application/json:
+              
