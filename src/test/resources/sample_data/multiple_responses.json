@@ -1,0 +1,92 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2018 The New York Times Company. All Rights Reserved.",
+  "response": {
+    "docs": [
+      {
+        "web_url": "https://www.nytimes.com/reuters/2018/05/03/sample/sample-article-1.html",
+        "snippet": "This is a sample snippet from the first article",
+        "source": "Reuters",
+        "headline": {
+          "main": "Sample Headline - Article 1",
+          "kicker": null,
+          "content_kicker": null,
+          "print_headline": "Sample Headline - Article 1",
+          "name": null,
+          "seo": null,
+          "sub": null
+        },
+        "keywords": [],
+        "pub_date": "2018-05-03T09:58:32+0000",
+        "_id": "5aeadd61068401528a2ac034",
+        "score": 0.0038582892
+      },
+      {
+        "web_url": "https://www.nytimes.com/reuters/2018/05/03/sample/sample-article-2.html",
+        "snippet": "This is a sample snippet from the second article",
+        "source": "The New York Times",
+        "headline": {
+          "main": "Sample Headline - Article 2",
+          "kicker": null,
+          "content_kicker": null,
+          "print_headline": "Sample Headline - Article 2",
+          "name": null,
+          "seo": null,
+          "sub": null
+        },
+        "keywords": [
+          {
+            "name": "organizations",
+            "value": "keyword1",
+            "rank": 1,
+            "major": "N"
+          },
+          {
+            "name": "organizations",
+            "value": "keyword2",
+            "rank": 2,
+            "major": "N"
+          },
+          {
+            "name": "glocations",
+            "value": "keyword3",
+            "rank": 3,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "keyword4",
+            "rank": 4,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "keyword5",
+            "rank": 5,
+            "major": "N"
+          },
+          {
+            "name": "organizations",
+            "value": "keyword6",
+            "rank": 6,
+            "major": "N"
+          },
+          {
+            "name": "subject",
+            "value": "keyword7",
+            "rank": 7,
+            "major": "N"
+          }
+        ],
+        "pub_date": "2018-04-26T13:18:11+0000",
+        "_id": "5ae1d196068401528a2aad50",
+        "score": 0.001955777
+      }
+    ],
+    "meta": {
+      "hits": 2,
+      "offset": 0,
+      "time": 10
+    }
+  }
+}

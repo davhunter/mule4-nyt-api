@@ -1,0 +1,60 @@
+{
+  "detailedResults": [
+    {
+      "datePublished": "2018-05-03T09:58:32+0000",
+      "id": "5aeadd61068401528a2ac034",
+      "source": "NYT",
+      "text": "This is a sample snippet from the first article",
+      "categories": [
+        
+      ],
+      "title": "Sample Headline - Article 1",
+      "department": "Reuters",
+      "user": "",
+      "url": "https://www.nytimes.com/reuters/2018/05/03/sample/sample-article-1.html"
+    },
+    {
+      "datePublished": "2018-04-26T13:18:11+0000",
+      "id": "5ae1d196068401528a2aad50",
+      "source": "NYT",
+      "text": "This is a sample snippet from the second article",
+      "categories": [
+        "keyword1",
+        "keyword2",
+        "keyword3",
+        "keyword4",
+        "keyword5",
+        "keyword6",
+        "keyword7"
+      ],
+      "title": "Sample Headline - Article 2",
+      "department": "The New York Times",
+      "user": "",
+      "url": "https://www.nytimes.com/reuters/2018/05/03/sample/sample-article-2.html"
+    }
+  ],
+  "simpleResults": [
+    {
+      "id": "5aeadd61068401528a2ac034",
+      "source": "NYT",
+      "text": "This is a sample snippet from the first article",
+      "categories": [
+        
+      ]
+    },
+    {
+      "id": "5ae1d196068401528a2aad50",
+      "source": "NYT",
+      "text": "This is a sample snippet from the second article",
+      "categories": [
+        "keyword1",
+        "keyword2",
+        "keyword3",
+        "keyword4",
+        "keyword5",
+        "keyword6",
+        "keyword7"
+      ]
+    }
+  ]
+}

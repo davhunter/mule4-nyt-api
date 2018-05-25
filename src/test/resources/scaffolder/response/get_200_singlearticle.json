@@ -1,0 +1,39 @@
+{
+  "detailedResults": [
+    {
+      "datePublished": "2018-04-26T13:18:11+0000",
+      "id": "5ae1d196068401528a2aad50",
+      "source": "NYT",
+      "text": "This is a sample snippet from the second article",
+      "categories": [
+        "keyword1",
+        "keyword2",
+        "keyword3",
+        "keyword4",
+        "keyword5",
+        "keyword6",
+        "keyword7"
+      ],
+      "title": "Sample Headline - Article 2",
+      "department": "The New York Times",
+      "user": "",
+      "url": "https://www.nytimes.com/reuters/2018/05/03/sample/sample-article-2.html"
+    }
+  ],
+  "simpleResults": [
+    {
+      "id": "5ae1d196068401528a2aad50",
+      "source": "NYT",
+      "text": "This is a sample snippet from the second article",
+      "categories": [
+        "keyword1",
+        "keyword2",
+        "keyword3",
+        "keyword4",
+        "keyword5",
+        "keyword6",
+        "keyword7"
+      ]
+    }
+  ]
+}
