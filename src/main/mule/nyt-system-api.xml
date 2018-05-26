@@ -59,6 +59,19 @@ output application/json
                     </ee:variables>
                 </ee:transform>
             </on-error-propagate>
+            <on-error-propagate type="VALIDATION:INVALID_BOOLEAN">
+                <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd" doc:id="3d1cf240-79b9-479d-9752-2ae9e3a9a03e">
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Number of attempts exceeded"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus"><![CDATA[500]]></ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
             <on-error-propagate type="APIKIT:METHOD_NOT_ALLOWED">
                 <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
                     <ee:message>
@@ -155,6 +168,7 @@ output application/json
 				<http:success-status-code-validator values="200,429" />
 			</http:response-validator>
 		</http:request>
+		<validation:is-true doc:name="Validate HTTP Status Code" doc:id="73adda96-daed-4ff8-aef2-e9bf92e69753" expression="#[attributes.statusCode == 200]" message="Too many calls to the API; request rejected"/>
 		<validation:is-not-empty-collection doc:name="Validate Results Returned" doc:id="0f839307-8bcb-4ce3-8c33-b2a51237b008" message="No results returned from NYT" values="#[payload.response.docs]"/>
 		<ee:transform doc:name="Transform Message" doc:id="5e42b0f4-6e5c-49ec-9b79-3f691b7af9ab" >
 			<ee:message >
