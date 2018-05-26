@@ -17,6 +17,7 @@
 				</munit-tools:with-attributes>
 				<munit-tools:then-return >
 					<munit-tools:payload value="#[MunitTools::getResourceAsString('sample_data/multiple_responses.json')]" mediaType="application/json" />
+					<munit-tools:attributes value="#['statusCode':200]" />
 				</munit-tools:then-return>
 			</munit-tools:mock-when>
 		</munit:behavior>
@@ -35,7 +36,7 @@
         </munit:validation>
     </munit:test>
     
-	<munit:test name="test-single-result" description="Verifying functionality of API when a single result is returned from the NYT API" doc:id="43148704-1808-4aca-97fe-7e21fa9cff9b" >
+	<munit:test name="test-single-result" description="Verifying functionality of API when a single result is returned from the NYT API" doc:id="43148704-1808-4aca-97fe-7e21fa9cff9b">
         <munit:enable-flow-sources>
             <munit:enable-flow-source value="nyt-system-api-main" />
             <munit:enable-flow-source value="get:\articles\(searchTerm):nyt-system-api-config" />
@@ -47,6 +48,7 @@
 				</munit-tools:with-attributes>
 				<munit-tools:then-return>
 					<munit-tools:payload value="#[MunitTools::getResourceAsString('sample_data/single_response.json')]" mediaType="application/json" />
+					<munit-tools:attributes value="#['statusCode':200]" />
 				</munit-tools:then-return>
 			</munit-tools:mock-when>
 		</munit:behavior>
@@ -77,6 +79,7 @@
         		</munit-tools:with-attributes>
         		<munit-tools:then-return>
         			<munit-tools:payload value="#[MunitTools::getResourceAsString('sample_data/no_responses.json')]" mediaType="application/json"/>
+					<munit-tools:attributes value="#['statusCode':200]" />
         		</munit-tools:then-return>
         	</munit-tools:mock-when>
         </munit:behavior>
@@ -95,5 +98,34 @@
         <munit:validation>
         	<munit-tools:assert-that expression="#[attributes.statusCode]" is="#[MunitTools::equalTo(404)]" message="The HTTP status code is not correct!" doc:name="Assert that response code is 404"/>
         </munit:validation>
+	</munit:test>
+	
+	<munit:test name="test-429-result" description="MUnit Test" doc:id="1dec44c5-3bc8-43f1-a744-e696a6c77ff5" >
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Call to NYT API" doc:id="d735ddb5-4a28-4ffe-ac96-d37609bf153e" processor="http:request">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute attributeName="doc:name" whereValue="Call NYT API" />
+				</munit-tools:with-attributes>
+				<munit-tools:then-return >
+					<munit-tools:attributes value="#['statusCode':429]" />
+				</munit-tools:then-return>
+			</munit-tools:mock-when>
+		</munit:behavior>
+		<munit:execution >
+			<http:request config-ref="HTTP_Request_Configuration" method="GET" path="/articles/searchTerm" doc:name="Request">
+				<http:headers><![CDATA[#[output applicaton/java
+---
+{
+	"Accept" : "application/json"
+}]]]></http:headers>
+				<http:response-validator >
+					<http:success-status-code-validator values="200,404,406" />
+				</http:response-validator>
+			</http:request>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that expression="#[attributes.statusCode]" is="#[MunitTools::equalTo(406)]" message="The HTTP status code is not correct!" doc:name="Assert that response code is 406" />
+			<munit-tools:assert-that expression="#[output application/java ---write(payload, 'application/json') as String]" is="#[MunitTools::equalTo(MunitTools::getResourceAsString('scaffolder/response/get_406_toomanysearches.json'))]" message="The response payload is not correct!" doc:name="Assert that - Payload is Expected"  />
+		</munit:validation>
 	</munit:test>
 </mule>

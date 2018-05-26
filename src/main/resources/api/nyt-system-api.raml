@@ -16,10 +16,14 @@ documentation:
           body: 
             application/json:
               type: !include exchange_modules/69d7f319-0d94-4bcb-b6e9-d6d5e28b1545/data-aggregation-demo-data-types/1.0.1/Result.raml
+              example: !include examples/example-response.json
         404:
           body: 
             application/json:
-        500:
+              example: |
+                {"message":"Resource not found"}
+        406:
           body: 
             application/json:
-              
+              example: |
+                {"message":"Number of attempts exceeded"}
