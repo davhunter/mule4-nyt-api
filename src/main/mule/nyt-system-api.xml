@@ -175,11 +175,12 @@ output application/json
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
+import dw::core::Strings
 ---
 {
 	searchTerm: vars.initialSearchTerm,
 	detailedResults: payload.response.docs map ( result , indexOfResult ) -> {
-		datePublished: result.pub_date,
+		datePublished: result.pub_date[0 to 18] as DateTime as String,
 		id: result."_id",
 		source: "NYT",
 		text: result.snippet,
