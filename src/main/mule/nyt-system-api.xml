@@ -155,7 +155,7 @@ output application/json
     </flow>
     <flow name="get:\articles\(searchTerm):nyt-system-api-config">
         <set-variable value="#[attributes.uriParams.searchTerm]" doc:name="Capture Incoming Search Term" doc:id="0ba7a4bd-313b-497f-9a65-80cc1ee1bf22" variableName="initialSearchTerm"/>
-		<http:request method="GET" doc:name="Call NYT API" doc:id="e3e9dec7-eabd-4be9-aed7-d8db087e0109" config-ref="NYT_Request_configuration" path="${nyt.path}" outputMimeType="application/json">
+		<http:request method="GET" doc:name="Call NYT API" doc:id="e3e9dec7-eabd-4be9-aed7-d8db087e0109" config-ref="NYT_Request_configuration" path="${nyt.path}">
 			<http:query-params ><![CDATA[#[output applicaton/java
 ---
 {
